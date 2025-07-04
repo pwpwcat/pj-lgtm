@@ -1,6 +1,13 @@
+import Header from './Header'
+import Footer from './Footer'
+
 const Layout = ({ children }: { children: React.ReactNode }) => {
     return (
-      <div>{children}</div>
+        <>
+            <Header />
+            <div>{children}</div>
+            <Footer />
+        </>
     )
-  }
+}
 export default Layout
