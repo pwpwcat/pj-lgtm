@@ -1,4 +1,4 @@
-import styles from './header.module.sass';
+import styles from './Header.module.sass';
 import { Link } from 'react-router';
 
 const Header = () => {
