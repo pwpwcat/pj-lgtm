@@ -1,16 +1,16 @@
-import { StrictMode } from 'react'
 import { BrowserRouter } from 'react-router'
-import { createRoot } from 'react-dom/client'
-import Layout from './layout'
+import RootLayout from './layout/RootLayout'
 import AppRoutes from './AppRoutes'
 import './global.sass'
 
-createRoot(document.getElementById('root')!).render(
-  <StrictMode>
+const App = () => {
+  return (
     <BrowserRouter>
-      <Layout >
+      <RootLayout>
         <AppRoutes />
-      </Layout>
+      </RootLayout>
     </BrowserRouter>
-  </StrictMode>,
-)
+  )
+}
+
+export default App

@@ -71,51 +71,67 @@ npm run dev
 ## 📦 ディレクトリ構成
 
 ```
-├── src
-│   ├── app
-│   │   ├── App.tsx
-│   │   ├── AppRoutes.tsx
-│   │   ├── components
-│   │   │   ├── Button
-│   │   │   │   ├── Button.module.sass
-│   │   │   │   ├── Button.tsx
-│   │   │   │   └── index.ts
-│   │   │   ├── Footer
-│   │   │   │   ├── Footer.module.sass
-│   │   │   │   ├── Footer.tsx
-│   │   │   │   └── index.ts
-│   │   │   ├── Header
-│   │   │   │   ├── Header.module.sass
+├── src/                                 # アプリケーションのソースコード
+│   ├── index.tsx                        # Reactアプリのエントリポイント（createRoot）
+│   ├── vite-env.d.ts                    # Vite用の型定義
+
+│   ├── app/                             # アプリの本体ロジックを集約
+│   │   ├── App.tsx                      # ルーティング・レイアウト含むアプリ本体
+│   │   ├── AppRoutes.tsx                # React Router のルート定義
+│   │   ├── global.sass                  # グローバルスタイル
+
+│   │   ├── layout/                      # アプリ全体の構造を担うUI
+│   │   │   ├── Header/                  # ヘッダー（全ページ共通）
 │   │   │   │   ├── Header.tsx
+│   │   │   │   ├── Header.module.sass
 │   │   │   │   └── index.ts
-│   │   │   └── index.ts
-│   │   ├── global.sass
-│   │   ├── layout
-│   │   │   └── index.tsx
-│   │   └── pages
-│   │       ├── about
-│   │       │   ├── index.module.sass
-│   │       │   └── index.tsx
-│   │       └── home
-│   │           ├── index.module.sass
-│   │           └── index.tsx
-│   ├── assets
-│   │   └── stylesheets
-│   │       ├── _index.sass
-│   │       ├── _mixins.sass
-│   │       └── _variables.sass
-│   └── vite-env.d.ts
-├── .node-version
-├── eslint.config.js
-├── index.html
-├── package-lock.json
-├── package.json
-├── README.md
-├── tsconfig.app.json
-├── tsconfig.json
-├── tsconfig.node.json
-└── vite.config.ts
+│   │   │   ├── Footer/                  # フッター（全ページ共通）
+│   │   │   │   ├── Footer.tsx
+│   │   │   │   ├── Footer.module.sass
+│   │   │   │   └── index.ts
+│   │   │   └── RootLayout.tsx           # 共通レイアウト（Header/Footerなどをラップ）
+
+│   │   ├── pages/                       # 各ページ（ルーティング単位）
+│   │   │   ├── home/                    # `/`：トップページ
+│   │   │   │   ├── index.tsx
+│   │   │   │   └── index.module.sass
+│   │   │   ├── about/                   # `/about`：概要ページなど
+│   │   │   │   ├── index.tsx
+│   │   │   │   └── index.module.sass
+
+│   │   └── shared/                      # 再利用可能なUI群
+│   │       ├── index.ts                 # UIコンポーネントのエクスポートまとめ
+│   │       └── ui/
+│   │           ├── Button/              # 汎用ボタンコンポーネント
+│   │           │   ├── Button.tsx
+│   │           │   ├── Button.module.sass
+│   │           │   └── index.ts
+│   │           └── index.ts             # UIコンポーネントの集約エントリ
+
+│
+├── assets/                              # 静的アセット（主にスタイル）
+│   └── stylesheets/
+│       ├── _index.sass                  # Sassのエントリポイント（@use用）
+│       ├── _mixins.sass                 # 共通mixin
+│       └── _variables.sass              # カラーパレットや余白など変数定義
+
+├── index.html                           # ViteのエントリHTML（Reactアプリの起点）
+├── vite.config.ts                       # Viteの設定ファイル
+├── tsconfig.json                        # TypeScriptの共通設定
+├── tsconfig.app.json                    # アプリ用の個別設定
+├── tsconfig.node.json                   # Nodeスクリプト用の設定（Vite用など）
+├── eslint.config.js                     # ESLint 設定
+├── package.json                         # npm パッケージ設定
+├── package-lock.json                    # npm パッケージのバージョンロック
+└── README.md                            # プロジェクト説明ファイル
 ```
+### 🚩 判断フロー
+
+- ✅ ヘッダー/フッターなどの外枠？ → `layout/`
+- ✅ ページそのもの？ → `pages/`
+- ✅ 汎用UI？ → `shared/ui/`
+- ✅ 状態管理や操作を含む？ → `features/`
+- ❗ どれにも当てはまらない or 一時的なUI → ページ配下に仮置き or `widgets/`
 
 ---
 
