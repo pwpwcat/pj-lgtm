@@ -59,6 +59,15 @@ npm run dev
 
 ---
 
+## 💡 VSCode 拡張機能
+
+- [Sass (.sass only)](https://marketplace.visualstudio.com/items?itemName=Syler.sass-indented)
+  Sassファイルのシンタックスハイライト
+- [GitHub Copilot](https://marketplace.visualstudio.com/items?itemName=GitHub.copilot)
+  AIによるコーディング支援
+
+---
+
 ## 📦 ディレクトリ構成
 
 ```
