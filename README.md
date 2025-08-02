@@ -69,6 +69,8 @@ npm run dev
 ---
 
 ## 📦 ディレクトリ構成
+FSD：https://feature-sliced.design/
+参考：https://zenn.dev/kyuki/articles/d736b0957e6336
 
 ```
 ├── src/                                 # アプリケーションのソースコード
