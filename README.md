@@ -78,35 +78,35 @@ npm run dev
 │   ├── app/                             # アプリの本体ロジックを集約
 │   │   ├── App.tsx                      # ルーティング・レイアウト含むアプリ本体
 │   │   ├── AppRoutes.tsx                # React Router のルート定義
-│   │   ├── global.sass                  # グローバルスタイル
+│   │   └── global.sass                  # グローバルスタイル
 
-│   │   ├── layout/                      # アプリ全体の構造を担うUI
-│   │   │   ├── Header/                  # ヘッダー（全ページ共通）
-│   │   │   │   ├── Header.tsx
-│   │   │   │   ├── Header.module.sass
-│   │   │   │   └── index.ts
-│   │   │   ├── Footer/                  # フッター（全ページ共通）
-│   │   │   │   ├── Footer.tsx
-│   │   │   │   ├── Footer.module.sass
-│   │   │   │   └── index.ts
-│   │   │   └── RootLayout.tsx           # 共通レイアウト（Header/Footerなどをラップ）
+│   ├── layout/                          # アプリ全体の構造を担うUI
+│   │   ├── Header/                      # ヘッダー（全ページ共通）
+│   │   │   ├── Header.tsx
+│   │   │   ├── Header.module.sass
+│   │   │   └── index.ts
+│   │   ├── Footer/                      # フッター（全ページ共通）
+│   │   │   ├── Footer.tsx
+│   │   │   ├── Footer.module.sass
+│   │   │   └── index.ts
+│   │   └── RootLayout.tsx               # 共通レイアウト（Header/Footerなどをラップ）
 
-│   │   ├── pages/                       # 各ページ（ルーティング単位）
-│   │   │   ├── home/                    # `/`：トップページ
-│   │   │   │   ├── index.tsx
-│   │   │   │   └── index.module.sass
-│   │   │   ├── about/                   # `/about`：概要ページなど
-│   │   │   │   ├── index.tsx
-│   │   │   │   └── index.module.sass
+│   ├── pages/                           # 各ページ（ルーティング単位）
+│   │   ├── home/                        # `/`：トップページ
+│   │   │   ├── index.tsx
+│   │   │   └── index.module.sass
+│   │   ├── about/                       # `/about`：概要ページなど
+│   │   │   ├── index.tsx
+│   │   │   └── index.module.sass
 
-│   │   └── shared/                      # 再利用可能なUI群
-│   │       ├── index.ts                 # UIコンポーネントのエクスポートまとめ
-│   │       └── ui/
-│   │           ├── Button/              # 汎用ボタンコンポーネント
-│   │           │   ├── Button.tsx
-│   │           │   ├── Button.module.sass
-│   │           │   └── index.ts
-│   │           └── index.ts             # UIコンポーネントの集約エントリ
+│   └── shared/                          # 再利用可能なUI群
+│       ├── index.ts                     # UIコンポーネントのエクスポートまとめ
+│       └── ui/
+│           ├── Button/                  # 汎用ボタンコンポーネント
+│           │   ├── Button.tsx
+│           │   ├── Button.module.sass
+│           │   └── index.ts
+│           └── index.ts                 # UIコンポーネントの集約エントリ
 
 │
 ├── assets/                              # 静的アセット（主にスタイル）
