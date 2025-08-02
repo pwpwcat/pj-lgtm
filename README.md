@@ -89,7 +89,7 @@ npm run dev
 │   │   │   │   ├── Header.tsx
 │   │   │   │   └── index.ts
 │   │   │   └── index.ts
-│   │   ├── global.css
+│   │   ├── global.sass
 │   │   ├── layout
 │   │   │   └── index.tsx
 │   │   └── pages
