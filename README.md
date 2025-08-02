@@ -1,54 +1,123 @@
-# React + TypeScript + Vite
+# LGTM Web App 🐱🖼️
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+「Looks Good To Me!」画像を作成・共有できる、React + TypeScript + Vite 製のWebアプリ
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🛠️ Tech Stack
 
-## Expanding the ESLint configuration
+- **Frontend**: React + TypeScript
+- **Bundler**: Vite
+- **Styling**: CSS Modules
+- **State Management**: useState
+- **Lint / Format**: ESLint
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+---
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+## ✨ 主な機能(仮)
+
+- 画像アップロードまたはURL入力からLGTM画像を作成  
+- 「LGTM」テキストのフォント・色・サイズ・位置をカスタマイズ  
+- 生成画像をSNSシェア / ダウンロード可能  
+- ローカル保存による作成履歴の表示
+
+---
+
+## 🚀 Getting Started
+
+### 1. リポジトリをクローン
+
+```bash
+git clone https://github.com/pwpwcat/pj-lgtm.git
+cd pj-lgtm
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### 2. パッケージをインストール
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+```bash
+npm i
 ```
+
+### 3. 開発サーバーを起動
+
+```bash
+npm run dev
+```
+
+➡️ アプリは `http://localhost:5173` で確認できます
+
+---
+
+## 🧪 利用可能なスクリプト
+
+| コマンド         | 内容                         |
+|------------------|------------------------------|
+| `dev`            | 開発サーバー起動             |
+| `build`          | 本番ビルド                   |
+| `preview`        | ビルド済みアプリの確認       |
+| `lint`           | ESLint による構文チェック     |
+
+---
+
+## 📦 ディレクトリ構成
+
+```
+├── src
+│   ├── app
+│   │   ├── App.tsx
+│   │   ├── AppRoutes.tsx
+│   │   ├── components
+│   │   │   ├── Button
+│   │   │   │   ├── Button.module.sass
+│   │   │   │   ├── Button.tsx
+│   │   │   │   └── index.ts
+│   │   │   ├── Footer
+│   │   │   │   ├── Footer.module.sass
+│   │   │   │   ├── Footer.tsx
+│   │   │   │   └── index.ts
+│   │   │   ├── Header
+│   │   │   │   ├── Header.module.sass
+│   │   │   │   ├── Header.tsx
+│   │   │   │   └── index.ts
+│   │   │   └── index.ts
+│   │   ├── global.css
+│   │   ├── layout
+│   │   │   └── index.tsx
+│   │   └── pages
+│   │       ├── about
+│   │       │   ├── index.module.sass
+│   │       │   └── index.tsx
+│   │       └── home
+│   │           ├── index.module.sass
+│   │           └── index.tsx
+│   ├── assets
+│   │   └── stylesheets
+│   │       ├── _index.sass
+│   │       ├── _mixins.sass
+│   │       └── _variables.sass
+│   └── vite-env.d.ts
+├── .node-version
+├── eslint.config.js
+├── index.html
+├── package-lock.json
+├── package.json
+├── README.md
+├── tsconfig.app.json
+├── tsconfig.json
+├── tsconfig.node.json
+└── vite.config.ts
+```
+
+---
+
+## 📝 TODO / 今後の展望
+
+- [ ] 何か書く
+
+---
+
+## 📄 ライセンス
+
+MIT License
+
+---
