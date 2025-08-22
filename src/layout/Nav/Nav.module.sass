@@ -1,0 +1,20 @@
+.base
+    .hamburger
+        position: relative
+        z-index: 1001
+    .nav
+        background-color: var(--black)
+        color: var(--white)
+        position: fixed
+        top: 0
+        right: -100%
+        width: 100vw
+        height: 100vh
+        background-color: rgba(0, 0, 0, 0.5)
+        display: flex
+        align-items: center
+        justify-content: center
+        z-index: 1000
+        transition: right 0.3s ease-in-out
+        &.is-active
+            right: 0
