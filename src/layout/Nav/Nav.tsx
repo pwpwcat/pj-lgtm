@@ -3,7 +3,7 @@ import { Link } from 'react-router';
 import { useState } from 'react';
 
 const Nav = () => {
-  const [navOpen,setNavOpen] = useState<boolean>(true)
+  const [navOpen,setNavOpen] = useState<boolean>(false)
   const handleNavClick = () =>{
     setNavOpen((prev) => !prev )
   }
@@ -15,10 +15,10 @@ const Nav = () => {
       <nav className={`${styles.nav} ${navOpen && styles['is-active']}`}>
         <ul className={styles.list}>
           <li className={styles.item}>
-            <Link to="/">HOME</Link>
+            <Link onClick={() => handleNavClick()} to="/">HOME</Link>
           </li>
           <li className={styles.item}>
-            <Link to="/about">ABOUT</Link>
+            <Link onClick={() => handleNavClick()} to="/about">ABOUT</Link>
           </li>
         </ul>
       </nav>
